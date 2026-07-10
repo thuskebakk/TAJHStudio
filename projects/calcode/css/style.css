@@ -352,6 +352,17 @@ li {
   color: var(--text-tertiary);
 }
 
+.studio-credit {
+  color: #2a5cf6;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.studio-credit:hover,
+.studio-credit:focus-visible {
+  color: #578dff;
+}
+
 @media (max-width: 520px) {
   .site-header {
     padding-inline: var(--space-5);
