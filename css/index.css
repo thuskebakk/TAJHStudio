@@ -180,8 +180,8 @@ h1 {
 .project-status {
     padding: 0.35rem 0.5rem;
     border-radius: 999px;
-    background: #1d315b;
-    color: #7eabff;
+    background: rgba(111, 191, 157, 0.16);
+    color: #6fbf9d;
 }
 
 .project-details > div > p {
@@ -222,9 +222,11 @@ h1 {
 }
 
 .app-icon-preview img {
-    width: 72%;
-    height: 72%;
+    width: 62%;
+    height: 62%;
     object-fit: contain;
+    border-radius: 1rem;
+    background: #ffffff;
 }
 
 .site-footer {
