@@ -1,7 +1,31 @@
+import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { defineConfig } from "vite";
 
+const partialsDirectory = resolve(__dirname, "src/partials");
+
+function htmlPartials() {
+  return {
+    name: "html-partials",
+    transformIndexHtml: {
+      order: "pre",
+      handler(html) {
+        return html.replace(/<!--\s*include:\s*([\w-]+\.html)\s*-->/g, (_match, filename) => {
+          return readFileSync(resolve(partialsDirectory, filename), "utf8").trim();
+        });
+      }
+    },
+    handleHotUpdate({ file, server }) {
+      if (file.startsWith(partialsDirectory)) {
+        server.ws.send({ type: "full-reload" });
+        return [];
+      }
+    }
+  };
+}
+
 export default defineConfig({
+  plugins: [htmlPartials()],
   build: {
     rollupOptions: {
       input: {
