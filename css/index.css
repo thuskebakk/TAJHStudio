@@ -39,8 +39,79 @@ main {
     padding: 2rem;
 }
 
+.hero {
+    justify-items: start;
+    padding: clamp(4rem, 12vw, 10rem) max(2rem, calc((100vw - 68rem) / 2));
+}
+
+.hero-content {
+    max-width: 42rem;
+}
+
+.eyebrow {
+    margin: 0 0 1rem;
+    color: #4d8dff;
+    font-family: "Geist Mono", monospace;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+}
+
 h1 {
     margin: 0;
+    max-width: 11ch;
+    font-size: clamp(3rem, 7vw, 5.25rem);
+    font-weight: 500;
+    letter-spacing: -0.065em;
+    line-height: 0.97;
+}
+
+.hero-description {
+    max-width: 33rem;
+    margin: 1.5rem 0 0;
+    color: #aaaab0;
+    font-size: 1rem;
+    line-height: 1.55;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+    margin-top: 2rem;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.75rem;
+    padding: 0 1.125rem;
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    color: #ffffff;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 150ms ease, border-color 150ms ease;
+}
+
+.button-primary {
+    background: #2f6fff;
+}
+
+.button-primary:hover,
+.button-primary:focus-visible {
+    background: #578dff;
+}
+
+.button-secondary {
+    border-color: #77777e;
+}
+
+.button-secondary:hover,
+.button-secondary:focus-visible {
+    border-color: #ffffff;
 }
 
 .site-footer {
@@ -59,7 +130,7 @@ h1 {
 
 .contact-link {
     justify-self: end;
-    color: inherit;
+    color: #2A5CF6;
     text-decoration: none;
 }
 
@@ -89,6 +160,14 @@ h1 {
 
     .site-logo img {
         height: 1.5rem;
+    }
+
+    .hero {
+        padding: 4rem 1.5rem;
+    }
+
+    h1 {
+        font-size: clamp(2.75rem, 15vw, 4rem);
     }
 }
 

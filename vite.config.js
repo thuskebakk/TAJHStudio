@@ -10,9 +10,11 @@ function htmlPartials() {
     transformIndexHtml: {
       order: "pre",
       handler(html) {
-        return html.replace(/<!--\s*include:\s*([\w-]+\.html)\s*-->/g, (_match, filename) => {
+        const withPartials = html.replace(/<!--\s*include:\s*([\w-]+\.html)\s*-->/g, (_match, filename) => {
           return readFileSync(resolve(partialsDirectory, filename), "utf8").trim();
         });
+
+        return withPartials.replaceAll("{{buildYear}}", String(new Date().getFullYear()));
       }
     },
     handleHotUpdate({ file, server }) {
