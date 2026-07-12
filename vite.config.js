@@ -34,7 +34,8 @@ export default defineConfig({
         main: resolve(__dirname, "index.html"),
         calcode: resolve(__dirname, "projects/calcode/index.html"),
         calcodePrivacy: resolve(__dirname, "projects/calcode/privacy.html"),
-        calcodeSupport: resolve(__dirname, "projects/calcode/support.html")
+        calcodeSupport: resolve(__dirname, "projects/calcode/support.html"),
+        calcodeTerms: resolve(__dirname, "projects/calcode/terms.html")
       }
     }
   }
